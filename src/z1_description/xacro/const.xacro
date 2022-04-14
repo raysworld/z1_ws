@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+
+<robot name="z1_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Constants for robot dimensions -->
+    <xacro:property name="PI" value="3.1415926535897931"/>
+
+    <!-- Link 00 -->
+    <xacro:property name="L00_Mass" value="0.34981070"/>
+    <xacro:property name="L00_ComX" value="0.0"/>
+    <xacro:property name="L00_ComY" value="0.0"/>
+    <xacro:property name="L00_ComZ" value="0.02411940"/>
+    <xacro:property name="L00_Ixx" value="0.00020017"/>
+    <xacro:property name="L00_Ixy" value="0.0"/>
+    <xacro:property name="L00_Ixz" value="0.0"/>
+    <xacro:property name="L00_Iyy" value="0.00020572"/>
+    <xacro:property name="L00_Iyz" value="0.0"/>
+    <xacro:property name="L00_Izz" value="0.00024219"/>
+
+    <!-- Link 01 -->
+    <xacro:property name="L01_Mass" value="0.56424720"/>
+    <xacro:property name="L01_ComX" value="0.0"/>
+    <xacro:property name="L01_ComY" value="0.0"/>
+    <xacro:property name="L01_ComZ" value="0.02130922"/>
+    <xacro:property name="L01_Ixx" value="0.00107984"/>
+    <xacro:property name="L01_Ixy" value="0.0"/>
+    <xacro:property name="L01_Ixz" value="0.0"/>
+    <xacro:property name="L01_Iyy" value="0.00059493"/>
+    <xacro:property name="L01_Iyz" value="0.0"/>
+    <xacro:property name="L01_Izz" value="0.00073514"/>
+
+    <!-- Link 02 -->
+    <xacro:property name="L02_Mass" value="1.16388272"/>
+    <xacro:property name="L02_ComX" value="-0.10099523"/>
+    <xacro:property name="L02_ComY" value="0.00204329"/>
+    <xacro:property name="L02_ComZ" value="0.0"/>
+    <xacro:property name="L02_Ixx" value="0.00106401"/>
+    <xacro:property name="L02_Ixy" value="-0.00068413"/>
+    <xacro:property name="L02_Ixz" value="0.00000257"/>
+    <xacro:property name="L02_Iyy" value="0.02278802"/>
+    <xacro:property name="L02_Iyz" value="-0.00000457"/>
+    <xacro:property name="L02_Izz" value="0.02321652"/>
+
+    <!-- Link 03 -->
+    <xacro:property name="L03_Mass" value="0.82932646"/>
+    <xacro:property name="L03_ComX" value="0.10080414"/>
+    <xacro:property name="L03_ComY" value="-0.00458953"/>
+    <xacro:property name="L03_ComZ" value="0.03042180"/>
+    <xacro:property name="L03_Ixx" value="0.00103249"/>
+    <xacro:property name="L03_Ixy" value="-0.00029057"/>
+    <xacro:property name="L03_Ixz" value="0.00456206"/>
+    <xacro:property name="L03_Iyy" value="0.01858187"/>
+    <xacro:property name="L03_Iyz" value="-0.00010111"/>
+    <xacro:property name="L03_Izz" value="0.01721431"/>
+
+    <!-- Link 04 -->
+    <xacro:property name="L04_Mass" value="0.50047586"/>
+    <xacro:property name="L04_ComX" value="0.04411956"/>
+    <xacro:property name="L04_ComY" value="0.00365743"/>
+    <xacro:property name="L04_ComZ" value="-0.00281929"/>
+    <xacro:property name="L04_Ixx" value="0.00028089"/>
+    <xacro:property name="L04_Ixy" value="-0.00006409"/>
+    <xacro:property name="L04_Ixz" value="-0.00001810"/>
+    <xacro:property name="L04_Iyy" value="0.00076270"/>
+    <xacro:property name="L04_Iyz" value="0.00000160"/>
+    <xacro:property name="L04_Izz" value="0.00078195"/>
+
+    <!-- Link 05 -->
+    <xacro:property name="L05_Mass" value="0.33204482"/>
+    <xacro:property name="L05_ComX" value="0.02996838"/>
+    <xacro:property name="L05_ComY" value="0.0"/>
+    <xacro:property name="L05_ComZ" value="0.00538846"/>
+    <xacro:property name="L05_Ixx" value="0.00015684"/>
+    <xacro:property name="L05_Ixy" value="0.0"/>
+    <xacro:property name="L05_Ixz" value="-0.00004898"/>
+    <xacro:property name="L05_Iyy" value="0.00047432"/>
+    <xacro:property name="L05_Iyz" value="0.0"/>
+    <xacro:property name="L05_Izz" value="0.00045640"/>
+
+    <!-- Link 06 -->
+    <xacro:property name="L06_Mass" value="0.26422336"/>
+    <xacro:property name="L06_ComX" value="0.02362012"/>
+    <xacro:property name="L06_ComY" value="0.0"/>
+    <xacro:property name="L06_ComZ" value="0.0"/>
+    <xacro:property name="L06_Ixx" value="0.00014794"/>
+    <xacro:property name="L06_Ixy" value="0.0"/>
+    <xacro:property name="L06_Ixz" value="0.0"/>
+    <xacro:property name="L06_Iyy" value="0.00013007"/>
+    <xacro:property name="L06_Iyz" value="0.0"/>
+    <xacro:property name="L06_Izz" value="0.00012866"/>
+
+    <!-- Link Gripper Stator -->
+    <xacro:property name="GripperStator_Mass" value="0.49382087"/>
+    <xacro:property name="GripperStator_ComX" value="0.04802786"/>
+    <xacro:property name="GripperStator_ComY" value="0.00052071"/>
+    <xacro:property name="GripperStator_ComZ" value="-0.00437040"/>
+    <xacro:property name="GripperStator_Ixx" value="0.00036403"/>
+    <xacro:property name="GripperStator_Ixy" value="0.00000507"/>
+    <xacro:property name="GripperStator_Ixz" value="-0.00008326"/>
+    <xacro:property name="GripperStator_Iyy" value="0.00067318"/>
+    <xacro:property name="GripperStator_Iyz" value="-0.0"/>
+    <xacro:property name="GripperStator_Izz" value="0.00066506"/>
+
+    <!-- Link Gripper Mover -->
+    <xacro:property name="GripperMover_Mass" value="0.25284091"/>
+    <xacro:property name="GripperMover_ComX" value="0.01493831"/>
+    <xacro:property name="GripperMover_ComY" value="0.00398120"/>
+    <xacro:property name="GripperMover_ComZ" value="0.00265060"/>
+    <xacro:property name="GripperMover_Ixx" value="0.00017222"/>
+    <xacro:property name="GripperMover_Ixy" value="-0.00001433"/>
+    <xacro:property name="GripperMover_Ixz" value="0.00001852"/>
+    <xacro:property name="GripperMover_Iyy" value="0.00026999"/>
+    <xacro:property name="GripperMover_Iyz" value="-0.00000214"/>
+    <xacro:property name="GripperMover_Izz" value="0.00035690"/>
+
+    <!-- joint limits -->
+    <!-- <xacro:property name="jointDamping" value="3.0"/> -->
+    <!-- <xacro:property name="jointFriction" value="2.0"/> -->
+    <xacro:property name="jointDamping" value="1.0"/>
+    <xacro:property name="jointFriction" value="1.0"/>
+
+    <xacro:property name="torqueMax" value="30.0"/>
+    <xacro:property name="velocityMax" value="10"/>
+    <xacro:property name="joint1_PositionMin" value="${-PI*150/180}"/>
+    <xacro:property name="joint1_PositionMax" value="${PI*150/180}"/>
+    <xacro:property name="joint2_PositionMin" value="0.0"/>
+    <xacro:property name="joint2_PositionMax" value="${PI}"/>
+    <xacro:property name="joint3_PositionMin" value="${-PI*274/180}"/>
+    <xacro:property name="joint3_PositionMax" value="0.0"/>
+    <xacro:property name="joint4_PositionMin" value="${-PI*80/180}"/>
+    <xacro:property name="joint4_PositionMax" value="${PI*80/180}"/>
+    <xacro:property name="joint5_PositionMin" value="${-PI*99/180}"/>
+    <xacro:property name="joint5_PositionMax" value="${PI*99/180}"/>
+    <xacro:property name="joint6_PositionMin" value="${-PI*160/180}"/>
+    <xacro:property name="joint6_PositionMax" value="${PI*160/180}"/>
+    <xacro:property name="Gripper_PositionMin" value="${-PI*90/180}"/>
+    <xacro:property name="Gripper_PositionMax" value="0.0"/>
+
+    <!-- collision size -->
+    <xacro:property name="motor_diameter" value="${0.065/2.0}"/>
+    <xacro:property name="motor_height" value="0.051"/>
+    <xacro:property name="arm1_diameter" value="${0.045/2.0}"/>
+    <xacro:property name="arm1_height" value="0.235"/>
+    <xacro:property name="arm2_diameter" value="${0.04/2.0}"/>
+    <xacro:property name="arm2_height" value="0.126"/>
+    <xacro:property name="gripperBox_X" value="0."/>
+    <xacro:property name="gripperBox_Y" value="0."/>
+    <xacro:property name="gripperBox_Z" value="0."/>
+</robot>
